@@ -25,6 +25,33 @@ body {
 	align-items: center;
 }
 
+/* Tip */
+
+.tip {
+	opacity: 0;
+	font-size: 16px;
+	transition: opacity 0.5s ease-in-out, transform 2s ease-in-out;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 1em;
+	border-radius: 6px;
+}
+
+.tip.show {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(2);
+	animation: colorChange 2s;
+}
+
+@keyframes colorChange {
+	0% { color: purple; background-color: white; }
+	33% { color: purple; background-color: white; }
+	66% { color: purple; background-color: white; }
+	100% { color: transparent; }
+}
+
 .container {
 	width: 350px;
 }

@@ -1,4 +1,17 @@
 
+function showTip() {
+    const tip = document.querySelector('.tip');
+    tip.classList.add('show');
+
+    // Remove the tip from the DOM after 2 seconds
+    setTimeout(() => {
+        tip.remove();
+    }, 2000);
+}
+
+// Add an event listener to start the animation on page load
+window.addEventListener('load', showTip);
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const images = document.querySelectorAll(".random-img");
@@ -11,16 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Add a scroll event listener to trigger musicPlay
-window.addEventListener('scroll', musicPlay);
-
+document.addEventListener('click', musicPlay);
 function musicPlay() {
     document.getElementById('audioPlayer').play();
-    // Remove the event listener once triggered
-    window.removeEventListener('scroll', musicPlay);
+    document.removeEventListener('click', musicPlay);
 }
-
-
 
 const submitBtn = document.getElementById("submit")
 const inputs = document.querySelectorAll("input")
