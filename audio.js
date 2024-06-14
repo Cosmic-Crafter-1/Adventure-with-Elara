@@ -1,3 +1,14 @@
+
+// Song by <a href="https://stocktune.com/free-music/sunny-days-ahead-19392-32728">StockTune</a>
+
+// Song by <a href="https://stocktune.com/free-music/awakening-morning-glow-53791-50339">StockTune</a>
+
+// Song by <a href="https://stocktune.com/free-music/hearts-speak-softly-52930-49906">StockTune</a>
+
+
+
+
+
 let musicIndex = Math.floor(Math.random() * 4);
 
 export function setupAudioPlayer() {

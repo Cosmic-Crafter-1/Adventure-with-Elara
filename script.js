@@ -1,10 +1,5 @@
 
-
-// Music Player 
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    // setupAudioPlayer();
 
     const images = document.querySelectorAll(".random-img");
 
@@ -16,19 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// function setupAudioPlayer() {
-//     // Array of music filenames
-//     const musicFiles = ['music/0.mp3', 'music/1.mp3', 'music/2.mp3', 'music/3.mp3'];
+document.addEventListener('click', musicPlay);
 
-//     // Generate a random index to pick a song
-//     let musicIndex = Math.floor(Math.random() * musicFiles.length);
+function musicPlay() {
+    var audio = document.getElementById('audioPlayer');
+    audio.play();
+    document.removeEventListener('click', musicPlay);
+}
 
-//     // Get the audio player element
-//     const audioPlayer = document.querySelector(".audio-player");
-
-//     // Set the source of the audio element to the randomly chosen song
-//     audioPlayer.src = musicFiles[musicIndex];
-// }
 
 const submitBtn = document.getElementById("submit")
 const inputs = document.querySelectorAll("input")
