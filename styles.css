@@ -1,4 +1,3 @@
-
 /* 
 *{
 	border: 1px solid white;
@@ -14,18 +13,23 @@ body {
 	margin: 0;
 	padding: 15px;
 	letter-spacing: 1px;
-	
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 
 	font-family: "Poppins", sans-serif;
 	font-weight: 400;
 	font-style: normal;
-
 	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
+
+.container {
+	width: 350px;
+}
+
+/* Main */
 
 h1 {
 	color: gold;
@@ -33,7 +37,6 @@ h1 {
 }
 
 .img-text-wrapper {
-	width: 350px;
 	display: flex;
 	flex-direction: column;
 }
@@ -43,7 +46,7 @@ img {
 	height: 350px;
 	border-radius: 16px;
 	float: left;
-	
+
 }
 
 p {
@@ -52,7 +55,63 @@ p {
 	padding: 1em;
 }
 
+/* Challenge form */
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+	gap: 0.5em;
+}
+
+form p {
+	color: cyan;
+}
+
+input[type=radio] {
+	width: 2em;
+	height: 2em;
+	margin: 0;
+}
+
+.input-wrapper {
+	font-size: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
+}
+
+.input-wrapper span {
+	color: rgb(241, 84, 241);
+}
+
+button {
+	width: 300px;
+	height: 44px;
+	margin: 2em 0;
+	border-radius: 6px;
+	font-size: 20px;
+	font-family: inherit;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+button:active {
+	transform: translate(1px, 1px);
+}
+
+#result-area {
+	padding: 1em;
+	font-size: 22px;
+	transition: transform 1s ease-in-out;
+}
+
 a {
 	color: wheat;
 	font-size: 23px;
+	margin-top: 5em;
 }
