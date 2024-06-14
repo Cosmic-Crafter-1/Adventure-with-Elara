@@ -1,8 +1,8 @@
 /* 
 *{
 	border: 1px solid white;
-}
- */
+} */
+
 
 body {
 	background-color: black;
@@ -32,7 +32,7 @@ body {
 	font-size: 16px;
 	transition: opacity 0.5s ease-in-out, transform 2s ease-in-out;
 	position: absolute;
-	top: 75%;
+	top: 85%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	padding: 1em;
@@ -84,9 +84,14 @@ p {
 
 .challenge {
 	padding: 1em;
+	margin-top: 5em;
 	border-radius: 6px;
 	border: 2px solid white;
 	box-shadow: 0 0 30px 8px rgba(0, 150, 255, 0.7);
+}
+
+hr {
+	width: 80%;
 }
 
 form {
@@ -122,7 +127,7 @@ input[type=radio] {
 button {
 	width: 300px;
 	height: 44px;
-	margin: 2em 0;
+	margin-top: 2em;
 	border-radius: 6px;
 	font-size: 20px;
 	font-family: inherit;
@@ -154,6 +159,7 @@ a {
 section p {
 	color: coral;
 	font-size: 23px;
+	margin: 0;
 }
 
 /* Music Player */
