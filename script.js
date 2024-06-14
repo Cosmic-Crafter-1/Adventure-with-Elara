@@ -1,4 +1,7 @@
 
+// Add an event listener to start the animation on page load
+window.addEventListener('load', showTip);
+
 function showTip() {
     const tip = document.querySelector('.tip');
     tip.classList.add('show');
@@ -8,9 +11,6 @@ function showTip() {
         tip.remove();
     }, 2000);
 }
-
-// Add an event listener to start the animation on page load
-window.addEventListener('load', showTip);
 
 document.addEventListener("DOMContentLoaded", function () {
 
