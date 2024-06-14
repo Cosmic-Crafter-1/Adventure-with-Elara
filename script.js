@@ -11,13 +11,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener('click', musicPlay);
+// Add a scroll event listener to trigger musicPlay
+window.addEventListener('scroll', musicPlay);
 
 function musicPlay() {
-    var audio = document.getElementById('audioPlayer');
-    audio.play();
-    document.removeEventListener('click', musicPlay);
+    document.getElementById('audioPlayer').play();
+    // Remove the event listener once triggered
+    window.removeEventListener('scroll', musicPlay);
 }
+
 
 
 const submitBtn = document.getElementById("submit")
