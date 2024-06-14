@@ -49,5 +49,12 @@ submitBtn.addEventListener("click", function() {
 });
 
 
+// Music Player 
+
+import { setupAudioPlayer } from './audio.js';
+
+// Call setupAudioPlayer function to initialize the audio player
+setupAudioPlayer();
+
 
 

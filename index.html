@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="styles.css">
 
 
-
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
@@ -20,13 +19,14 @@
 
 <body>
 	<div class="container">
+
 		<h1> Adventure with Elara. </h1>
 
 		<div class="img-text-wrapper">
 			<img class="random-img" data-path="images/para-1/"
 				alt="a cozy house in the town of whispering pines at night.">
 			<p>
-				Elara, with her emerald cloak the colour of spring leaves, crouched low, peering at the deer tracks
+				Elara, with her emerald cloak the color of spring leaves, crouched low, peering at the deer tracks
 				imprinted on the damp earth. Her golden braids, usually adorned with wildflowers, were tucked under a
 				worn
 				leather cap. Tracking was Elara's magic. She could follow the faintest scent, decipher the language of
@@ -72,25 +72,24 @@
 		</div>
 
 
-
 		<div class="challenge">
 			<h2>Challenge Time !!!</h2>
 			<form>
 				<p>Which famous book series has Griffin in its name?</p>
 				<div class="input-wrapper">
-					<input type="radio" name="book_series" value="Percy Jackson"> 
+					<input type="radio" name="book_series" value="Percy Jackson">
 					<span> Percy Jackson </span>
 				</div>
 				<div class="input-wrapper">
-					<input type="radio" name="book_series" value="Famous Five"> 
+					<input type="radio" name="book_series" value="Famous Five">
 					<span> Famous Five </span>
 				</div>
 				<div class="input-wrapper">
-					<input type="radio" name="book_series" value="Harry Potter"> 
+					<input type="radio" name="book_series" value="Harry Potter">
 					<span>Harry Potter</span>
 				</div>
 				<div class="input-wrapper">
-					<input type="radio" name="book_series" value="Hardy Boys"> 
+					<input type="radio" name="book_series" value="Hardy Boys">
 					<span>Hardy Boys</span>
 				</div>
 			</form>
@@ -99,11 +98,44 @@
 		<button id="submit"> Submit </button>
 		<div id="result-area"></div>
 
-		<a href="#"> (Chapter 2: What does a baby griffin look like? Where is its family?) </a>
+		<section>
+			<p> Why is it alone ?? What's going to happen next....</p>
+			<p> Let's find out....</p>
+			<a href="#"> --> Chapter 2 </a>
+		</section>
+
+		<div class="music-player">
+			<!-- Your music player structure -->
+			<div style="width: 50px; height: 50px;"></div>
+			<div class="audio-player">
+				<div class="timeline">
+					<div class="progress"></div>
+				</div>
+				<div class="controls">
+					<div class="play-container">
+						<div class="toggle-play play"></div>
+					</div>
+					<div class="time">
+						<div class="current">0:00</div>
+						<div class="divider">/</div>
+						<div class="length"></div>
+					</div>
+					<div class="name">Music Song</div>
+					<div class="volume-container">
+						<div class="volume-button">
+							<div class="volume icono-volumeMedium"></div>
+						</div>
+						<div class="volume-slider">
+							<div class="volume-percentage"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
 
-	<script src="script.js"></script>
+	<script src="script.js" type="module"></script>
 </body>
 
 </html>
