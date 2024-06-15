@@ -15,11 +15,52 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 		rel="stylesheet">
+
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body>
 	<div class="container">
+
+		<div class="options">
+
+		<!-- Narrator -->
 		
+		<div class="music-player">
+			
+			<div style="width: 50px; height: 50px;"></div>
+			<div class="audio-player">
+				<div class="timeline">
+					<div class="progress"></div>
+				</div>
+				<div class="controls">
+					<div class="play-container">
+						<div class="toggle-play play"></div>
+					</div>
+					<div class="time">
+						<div class="current">0:00</div>
+						<div class="divider">/</div>
+						<div class="length"></div>
+					</div>
+					<div class="name"> Narrate </div>
+					<div class="volume-container">
+						<div class="volume-button">
+							<div class="volume icono-volumeMedium"></div>
+						</div>
+						<div class="volume-slider">
+							<div class="volume-percentage"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+			<div class="find-word"></div>
+		</div>
+
 		<div class="tip">
 			Tap anywhere for the music to start.
 		</div>
@@ -38,7 +79,7 @@
 				prints, and predict an animal's next move.
 			</p>
 		</div>
-		
+
 		<div class="img-text-wrapper">
 			<img class="random-img" data-path="images/para-1/" alt="">
 			<p>
@@ -66,7 +107,7 @@
 			</p>
 
 			<hr>
-			
+
 			<p>
 				Suddenly, a loud, squawking sound shattered the morning peace. Following the noise, she stumbled upon a
 				sight that made her emerald eyes widen. Curled beneath a giant oak tree, shivering and lost, was a baby
@@ -97,7 +138,7 @@
 					<label for="hardy_boys"><span>Hardy Boys</span></label>
 				</div>
 			</form>
-			
+
 		</div>
 
 		<button id="submit"> Submit </button>
@@ -109,44 +150,13 @@
 			<a href="#"> --> Chapter 2 </a>
 		</section>
 
-		<!-- Music Player -->
-<!-- 
-		<div class="music-player">
-			
-			<div style="width: 50px; height: 50px;"></div>
-			<div class="audio-player">
-				<div class="timeline">
-					<div class="progress"></div>
-				</div>
-				<div class="controls">
-					<div class="play-container">
-						<div class="toggle-play play"></div>
-					</div>
-					<div class="time">
-						<div class="current">0:00</div>
-						<div class="divider">/</div>
-						<div class="length"></div>
-					</div>
-					<div class="name">Music Song</div>
-					<div class="volume-container">
-						<div class="volume-button">
-							<div class="volume icono-volumeMedium"></div>
-						</div>
-						<div class="volume-slider">
-							<div class="volume-percentage"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		
 		<audio id="audioPlayer" src="music/3.mp3" controls loop>
 			Your browser does not support the audio element.
-		</audio>		
+		</audio>
 
 	</div>
 
-	<script src="script.js" type="module"></script>
+	<script src="chapter1.js" type="module"></script>
 </body>
 
 </html>
