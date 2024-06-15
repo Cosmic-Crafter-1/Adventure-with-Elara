@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chapter 1</title>
+	<link rel="icon" href="images/para-4/10.jpg" type="image/x-icon">
+
+	<link rel="stylesheet" href="chapter1.css">
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+		
+		<div class="tip">
+			Tap anywhere for the music to start.
+		</div>
+
+		<h1> Adventure with Elara. </h1>
+
+		<div class="img-text-wrapper">
+			<img class="random-img" data-path="images/para-1/"
+				alt="a cozy house in the town of whispering pines at night.">
+			<p>
+				Elara, with her emerald cloak the color of spring leaves, crouched low, peering at the deer tracks
+				imprinted on the damp earth. Her golden braids, usually adorned with wildflowers, were tucked under a
+				worn
+				leather cap. Tracking was Elara's magic. She could follow the faintest scent, decipher the language of
+				paw
+				prints, and predict an animal's next move.
+			</p>
+		</div>
+		
+		<div class="img-text-wrapper">
+			<img class="random-img" data-path="images/para-1/" alt="">
+			<p>
+				In the heart of Whisperwood, Elara was known as the best tracker there ever was. But there was one thing
+				Elara wasn't very good at - making friends.
+			</p>
+		</div>
+
+		<div class="img-text-wrapper">
+			<img class="random-img" data-path="images/para-2/" alt="Maya and Leo excited in their beds.">
+			<p>
+				Her fellow elves found her a bit too quiet, spending most of her time alone in the woods. But Elara
+				didn't
+				mind. She had the company of the rustling leaves, the gurgling streams, and the silent language of the
+				forest.
+			</p>
+		</div>
+
+		<div class="img-text-wrapper">
+			<img class="random-img" data-path="images/para-3/" alt="they reach attic door">
+			<p>
+				One crisp morning, as Elara was following a particularly interesting fox trail, she had setup her map
+				and
+				magnifying glass on the ground.
+			</p>
+
+			<hr>
+			
+			<p>
+				Suddenly, a loud, squawking sound shattered the morning peace. Following the noise, she stumbled upon a
+				sight that made her emerald eyes widen. Curled beneath a giant oak tree, shivering and lost, was a baby
+				griffin.
+			</p>
+
+			<img class="random-img" data-path="images/para-4/" alt="">
+		</div>
+
+		<div class="challenge">
+			<h2>Challenge Time !!!</h2>
+			<form>
+				<p>Which famous book series has Griffin in its name?</p>
+				<div class="input-wrapper">
+					<input type="radio" id="percy_jackson" name="book_series" value="Percy Jackson">
+					<label for="percy_jackson"><span>Percy Jackson</span></label>
+				</div>
+				<div class="input-wrapper">
+					<input type="radio" id="famous_five" name="book_series" value="Famous Five">
+					<label for="famous_five"><span>Famous Five</span></label>
+				</div>
+				<div class="input-wrapper">
+					<input type="radio" id="harry_potter" name="book_series" value="Harry Potter">
+					<label for="harry_potter"><span>Harry Potter</span></label>
+				</div>
+				<div class="input-wrapper">
+					<input type="radio" id="hardy_boys" name="book_series" value="Hardy Boys">
+					<label for="hardy_boys"><span>Hardy Boys</span></label>
+				</div>
+			</form>
+			
+		</div>
+
+		<button id="submit"> Submit </button>
+		<div id="result-area"></div>
+
+		<section>
+			<p> Why is it alone ?? What's going to happen next....</p>
+			<p> Let's find out....</p>
+			<a href="#"> --> Chapter 2 </a>
+		</section>
+
+		<!-- Music Player -->
+<!-- 
+		<div class="music-player">
+			
+			<div style="width: 50px; height: 50px;"></div>
+			<div class="audio-player">
+				<div class="timeline">
+					<div class="progress"></div>
+				</div>
+				<div class="controls">
+					<div class="play-container">
+						<div class="toggle-play play"></div>
+					</div>
+					<div class="time">
+						<div class="current">0:00</div>
+						<div class="divider">/</div>
+						<div class="length"></div>
+					</div>
+					<div class="name">Music Song</div>
+					<div class="volume-container">
+						<div class="volume-button">
+							<div class="volume icono-volumeMedium"></div>
+						</div>
+						<div class="volume-slider">
+							<div class="volume-percentage"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		
+		<audio id="audioPlayer" src="music/3.mp3" controls loop>
+			Your browser does not support the audio element.
+		</audio>		
+
+	</div>
+
+	<script src="script.js" type="module"></script>
+</body>
+
+</html>

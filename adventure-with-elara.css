@@ -1,0 +1,51 @@
+/* Body */
+
+body {
+	background-color: black;
+	color: white;
+	min-height: 99vh;
+
+	box-sizing: border-box;
+	margin: 0;
+	padding: 15px;
+	letter-spacing: 1px;
+
+	font-family: "Poppins", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	text-align: center;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.container {
+	width: 350px;
+}
+
+h1 {
+	color: chocolate;
+}
+
+h3 {
+	text-align: left;
+	margin-top: 2em;
+}
+
+.chapters img {
+	width: 300px;
+	transform: scale(0.9);
+
+	border-radius: 8px;
+}
+
+.chapters img:hover {
+	-webkit-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	transform: scale(0.8);
+	transition: 1s ease;
+	border: 7px solid gold;
+}
