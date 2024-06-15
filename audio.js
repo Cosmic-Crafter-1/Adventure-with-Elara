@@ -1,14 +1,14 @@
+// audio.js
 
 // Song by <a href="https://stocktune.com/free-music/sunny-days-ahead-19392-32728">StockTune</a>
-
 // Song by <a href="https://stocktune.com/free-music/awakening-morning-glow-53791-50339">StockTune</a>
-
 // Song by <a href="https://stocktune.com/free-music/hearts-speak-softly-52930-49906">StockTune</a>
 
 export function setupAudioPlayer() {
 
 	const audioPlayer = document.querySelector(".audio-player");
 	const audio = new Audio("music/Chapter-1.wav");
+	const backgroundAudio = document.getElementById("audioPlayer");
 
 	console.dir(audio);
 
@@ -22,6 +22,16 @@ export function setupAudioPlayer() {
 		},
 		false
 	);
+
+	// Reduce background audio volume when narrator starts playing
+	audio.addEventListener("play", () => {
+		backgroundAudio.volume = 0.50;  // Reduce by 50%
+	});
+
+	// Restore background audio volume when narrator finishes
+	audio.addEventListener("ended", () => {
+		backgroundAudio.volume = 1.0;  // Restored to 100%
+	});
 
 	//click on timeline to skip around
 	const timeline = audioPlayer.querySelector(".timeline");
