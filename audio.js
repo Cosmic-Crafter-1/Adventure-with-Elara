@@ -25,7 +25,7 @@ export function setupAudioPlayer() {
 
 	// Reduce background audio volume when narrator starts playing
 	audio.addEventListener("play", () => {
-		backgroundAudio.volume = 0.50;  // Reduce by 50%
+		backgroundAudio.volume = 0.40;  // Reduce by 60%
 	});
 
 	// Restore background audio volume when narrator finishes
