@@ -18,7 +18,7 @@ export function setupAudioPlayer() {
 			audioPlayer.querySelector(".time .length").textContent = getTimeCodeFromNum(
 				audio.duration
 			);
-			audio.volume = 2;
+			audio.volume = 1;
 		},
 		false
 	);

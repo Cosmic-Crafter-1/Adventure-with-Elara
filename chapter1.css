@@ -81,6 +81,103 @@ p {
 }
 
 
+
+/* Modal for companion */
+
+.modal {
+	width: 350px;
+	height: 350px;
+	border-radius: 8px;
+	padding: 5px;
+
+	background-color: white;
+	color: black;
+
+	display: none;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.modal-header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+}
+
+.cross {
+	font-weight: bold;
+	color: red;
+	font-size: larger;
+}
+
+.cross:hover {
+	cursor: pointer;
+}
+
+.companions {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	/* border: 1px solid black; */
+}
+
+.companions img {
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+.companions img:hover {
+	transform: scale(1.2);
+	transition: 0.3s ease-in-out;
+	border: 2px solid cyan;
+}
+
+.companions button {
+	background-color: beige;
+	color: color(srgb red green blue);
+	width: 90%;
+	height: 20%;
+	border: 2px solid lime;
+}
+
+.companions button:hover {
+	background-color: black;
+	color: gold;
+}
+
+.user-companion-img{
+	width: 270px;
+	height: 270px;
+	border-radius: 50%;
+}
+
+.modal-inner span{
+	font-size: 30px;
+	margin-top: 1em;
+	color: chocolate;
+}
+
+
+.random-img {
+	object-fit: cover;
+}
+
+#user-companion-name {
+	color: gold;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+
+	text-shadow: 3px 3px 6px #DC143C, 0 0 0.75em #DC143C, 0 0 0.4em #DC143C;
+}
+
 /* Challenge form */
 
 .challenge {
