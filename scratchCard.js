@@ -5,6 +5,7 @@ export const createScratchCard = (canvasId, color) => {
     const eggImage = document.querySelector('.egg img');
     const eggText = document.querySelector('.egg p');
     const eggRarity = document.getElementById("egg-rarity");
+    const jsConfetti = new JSConfetti();
 
     // Set canvas dimensions to match CSS dimensions
     canvas.width = canvas.clientWidth;
@@ -60,6 +61,16 @@ export const createScratchCard = (canvasId, color) => {
             canvas.style.pointerEvents = 'none';
 
             eggRarity.textContent = "LEGENDARY";
+
+            // Confetti / Celebration on successful scratch.
+            jsConfetti.addConfetti({
+                emojis: ['✨', '💫'],
+                emojiSize: 10,
+                confettiNumber: 350,
+
+            }).then(() => jsConfetti.addConfetti({
+                confettiNumber: 250,
+            }))
         }
     };
 

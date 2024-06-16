@@ -3,7 +3,6 @@ import { createScratchCard } from './scratchCard.js';
 
 // Variables
 const submitBtn = document.getElementById("submit");
-const inputs = document.querySelectorAll("input");
 const resultTextArea = document.getElementById("result-area");
 const modal = document.getElementById("modal");
 const companionButtons = document.querySelectorAll(".pet-btn");
