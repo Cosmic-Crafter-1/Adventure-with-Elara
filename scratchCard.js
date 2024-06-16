@@ -18,20 +18,10 @@ export const createScratchCard = (canvasId, color) => {
     let isDrawing = false;
 
 	const scratch = (x, y) => {
-		const radius = 30; // Increase the scratch radius for better coverage
+		const radius = 15; 
 		ctx.globalCompositeOperation = 'destination-out';
 		ctx.beginPath();
 		ctx.arc(x, y, radius, 0, Math.PI * 2);
-		ctx.fill();
-	
-		// Additionally, scratch nearby areas to cover the edges
-		ctx.arc(x + radius / 2, y, radius, 0, Math.PI * 2);
-		ctx.fill();
-		ctx.arc(x - radius / 2, y, radius, 0, Math.PI * 2);
-		ctx.fill();
-		ctx.arc(x, y + radius / 2, radius, 0, Math.PI * 2);
-		ctx.fill();
-		ctx.arc(x, y - radius / 2, radius, 0, Math.PI * 2);
 		ctx.fill();
 	};
 	

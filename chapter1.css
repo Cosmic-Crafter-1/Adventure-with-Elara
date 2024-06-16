@@ -344,6 +344,8 @@ canvas {
     z-index: 2; /* Ensure canvas is on top for interaction */
 }
 
+
+
 /* Music Player */
 
 audio {
