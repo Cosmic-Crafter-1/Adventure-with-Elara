@@ -179,6 +179,14 @@ p {
 	text-shadow: 3px 3px 6px #DC143C, 0 0 0.75em #DC143C, 0 0 0.4em #DC143C;
 }
 
+#choose-companion {
+	margin: 0 auto;
+}
+
+#choose-companion:hover {
+	background-color: gold;
+}
+
 /* Challenge form */
 
 .challenge {
@@ -288,6 +296,7 @@ h2.main-heading {
     align-items: center;
     user-select: none; /* Prevent text selection */
     background-color: gold;
+	margin-left: 1.5em;
 }
 
 .scratch-card {

@@ -13,6 +13,7 @@ let companionName = "";
 let companionImgPath = "";
 const userCompanionImg = document.getElementById("user-companion-image")
 const userCompanionName = document.getElementById("user-companion-name")
+const chooseCompanionBtn = document.getElementById("choose-companion")
 
 // Event listeners
 window.addEventListener('load', showTip);
@@ -20,7 +21,7 @@ document.addEventListener("DOMContentLoaded", loadRandomImages);
 document.addEventListener('click', musicPlay);
 document.addEventListener("DOMContentLoaded", setupAudioPlayer);
 submitBtn.addEventListener("click", checkAnswers);
-window.addEventListener('scroll', handleScroll);
+// window.addEventListener('scroll', handleScroll);
 companionButtons.forEach(button => button.addEventListener("click", companionAssign));
 crossBtn.addEventListener("click", closeModal);
 
@@ -88,27 +89,15 @@ function checkAnswers() {
     }, 1000);
 }
 
-// Get scroll percentage for modal popup
-function getScrollPercent() {
-    var h = document.documentElement,
-        b = document.body,
-        st = 'scrollTop',
-        sh = 'scrollHeight';
-    return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-}
+/* Choose companion via modal popup*/
 
-function handleScroll() {
-    let scrollPercent = parseFloat(getScrollPercent().toFixed(2));
-    console.log('Scroll Percentage: ' + scrollPercent + '%');
+chooseCompanionBtn.addEventListener("click", chooseCompanion)
 
-    if (scrollPercent >= 84.5 && scrollPercent <= 93.00) {
-        console.log("Great, it's working!!");
-
-        if (hasCompanion) {
-            console.log("You have already chosen your companion.");
-        } else {
-            showModal();
-        }
+function chooseCompanion() {
+    if (hasCompanion) {
+        console.log("You have already chosen your companion.");
+    } else {
+        showModal();
     }
 }
 
@@ -139,6 +128,7 @@ function companionAssign(e) {
         <img src="${companionImgPath}" alt="Photo of ${companionName}" class="user-companion-img">
         </div>
         `;
+        chooseCompanionBtn.style.display = "none"
     }, 1200);
     setTimeout(closeModal, 4500);
 
@@ -162,3 +152,35 @@ function showModal() {
 function closeModal() {
     modal.style.display = 'none';
 }
+
+
+
+
+
+// Legacy Code, might need in future
+
+// Get scroll percentage for modal popup
+
+// function getScrollPercent() {
+//     var h = document.documentElement,
+//         b = document.body,
+//         st = 'scrollTop',
+//         sh = 'scrollHeight';
+//     return (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+// }
+
+// function handleScroll() {
+
+//     let scrollPercent = parseFloat(getScrollPercent().toFixed(2));
+//     console.log('Scroll Percentage: ' + scrollPercent + '%');
+
+//     if (scrollPercent >= 77.5 && scrollPercent <= 83.5) {
+//         console.log("Great, it's working!!");
+
+//         if (hasCompanion) {
+//             console.log("You have already chosen your companion.");
+//         } else {
+//             showModal();
+//         }
+//     }
+// }
