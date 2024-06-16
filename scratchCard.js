@@ -65,8 +65,8 @@ export const createScratchCard = (canvasId, color) => {
             // Confetti / Celebration on successful scratch.
             jsConfetti.addConfetti({
                 emojis: ['✨', '💫'],
-                emojiSize: 10,
-                confettiNumber: 150,
+                emojiSize: 15,
+                confettiNumber: 50,
 
             })
             // .then(() => jsConfetti.addConfetti({
