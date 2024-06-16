@@ -93,7 +93,7 @@ function handleScroll() {
     let scrollPercent = parseFloat(getScrollPercent().toFixed(2));
     console.log('Scroll Percentage: ' + scrollPercent + '%');
 
-    if (scrollPercent >= 88.35 && scrollPercent <= 95.00) {
+    if (scrollPercent >= 84.5 && scrollPercent <= 95.00) {
         console.log("Great, it's working!!");
 
         if (hasCompanion) {
