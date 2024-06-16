@@ -93,7 +93,7 @@ function handleScroll() {
     let scrollPercent = parseFloat(getScrollPercent().toFixed(2));
     console.log('Scroll Percentage: ' + scrollPercent + '%');
 
-    if (scrollPercent >= 73.90 && scrollPercent <= 77.10) {
+    if (scrollPercent >= 88.35 && scrollPercent <= 95.00) {
         console.log("Great, it's working!!");
 
         if (hasCompanion) {
@@ -132,13 +132,13 @@ function companionAssign(e) {
         </div>
         `;
     }, 1200);
-    setTimeout(closeModal, 4000);
+    setTimeout(closeModal, 4500);
 
     setTimeout(function () {
         userCompanionImg.src = `${companionName}.jpg`
         userCompanionName.textContent = `${companionName}`
         userCompanionImg.style.display = "block"
-    }, 4500)
+    }, 5000)
 }
 
 
