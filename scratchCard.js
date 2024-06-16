@@ -17,12 +17,24 @@ export const createScratchCard = (canvasId, color) => {
 
     let isDrawing = false;
 
-    const scratch = (x, y) => {
-        ctx.globalCompositeOperation = 'destination-out';
-        ctx.beginPath();
-        ctx.arc(x, y, 20, 0, Math.PI * 2);
-        ctx.fill();
-    };
+	const scratch = (x, y) => {
+		const radius = 30; // Increase the scratch radius for better coverage
+		ctx.globalCompositeOperation = 'destination-out';
+		ctx.beginPath();
+		ctx.arc(x, y, radius, 0, Math.PI * 2);
+		ctx.fill();
+	
+		// Additionally, scratch nearby areas to cover the edges
+		ctx.arc(x + radius / 2, y, radius, 0, Math.PI * 2);
+		ctx.fill();
+		ctx.arc(x - radius / 2, y, radius, 0, Math.PI * 2);
+		ctx.fill();
+		ctx.arc(x, y + radius / 2, radius, 0, Math.PI * 2);
+		ctx.fill();
+		ctx.arc(x, y - radius / 2, radius, 0, Math.PI * 2);
+		ctx.fill();
+	};
+	
 
     const checkScratchPercentage = () => {
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -61,24 +73,52 @@ export const createScratchCard = (canvasId, color) => {
         }
     };
 
-    canvas.addEventListener('mousedown', function (event) {
+    const startDrawing = (event) => {
         isDrawing = true;
-        scratch(event.offsetX, event.offsetY);
+        scratch(getX(event), getY(event));
         checkScratchPercentage();
-    });
+        event.preventDefault(); // Prevent default touch action (like scrolling)
+    };
 
-    canvas.addEventListener('mouseup', function () {
-        isDrawing = false;
-    });
+    const getX = (event) => {
+        if (event.type === 'touchstart' || event.type === 'touchmove') {
+            return event.touches[0].clientX - canvas.getBoundingClientRect().left;
+        } else {
+            return event.offsetX;
+        }
+    };
 
-    canvas.addEventListener('mousemove', function (event) {
+    const getY = (event) => {
+        if (event.type === 'touchstart' || event.type === 'touchmove') {
+            return event.touches[0].clientY - canvas.getBoundingClientRect().top;
+        } else {
+            return event.offsetY;
+        }
+    };
+
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', function(event) {
         if (isDrawing) {
-            scratch(event.offsetX, event.offsetY);
+            scratch(getX(event), getY(event));
             checkScratchPercentage();
         }
     });
+    canvas.addEventListener('mouseup', function() {
+        isDrawing = false;
+    });
+    canvas.addEventListener('mouseleave', function() {
+        isDrawing = false;
+    });
 
-    canvas.addEventListener("mouseleave", function () {
+    // Touch events
+    canvas.addEventListener('touchstart', startDrawing);
+    canvas.addEventListener('touchmove', function(event) {
+        if (isDrawing) {
+            scratch(getX(event), getY(event));
+            checkScratchPercentage();
+        }
+    });
+    canvas.addEventListener('touchend', function() {
         isDrawing = false;
     });
 
