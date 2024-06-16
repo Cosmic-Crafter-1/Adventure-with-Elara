@@ -135,6 +135,10 @@ function companionAssign(e) {
     setTimeout(closeModal, 4500);
 
     setTimeout(function () {
+        // Play the companion name: 
+        const audio = new Audio(`music/${companionName}.wav`);
+        audio.play();
+
         userCompanionImg.src = `${companionName}.jpg`
         userCompanionName.textContent = `${companionName}`
         userCompanionImg.style.display = "block"
