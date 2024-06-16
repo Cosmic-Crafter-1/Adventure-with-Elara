@@ -3,7 +3,6 @@ export const createScratchCard = (canvasId, color) => {
     const ctx = canvas.getContext('2d');
     const scratchContainer = document.querySelector('.scratch-container');
     const eggImage = document.querySelector('.egg img');
-    const eggText = document.querySelector('.egg p');
     const eggRarity = document.getElementById("egg-rarity");
     const jsConfetti = new JSConfetti();
 
@@ -49,7 +48,6 @@ export const createScratchCard = (canvasId, color) => {
             // Reveal entire scratch card
             setTimeout(() => {
                 scratchContainer.style.userSelect = 'auto'; // Enable text selection
-                eggText.style.display = 'block'; // Show the egg text (if hidden)
                 // Zoom out effect on egg image
                 eggImage.style.transform = 'scale(1)';
             }, 500); // Adjust timing as needed
@@ -66,7 +64,7 @@ export const createScratchCard = (canvasId, color) => {
             jsConfetti.addConfetti({
                 emojis: ['✨', '💫'],
                 emojiSize: 30,
-                confettiNumber: 30,
+                confettiNumber: 3,
 
             })
             // .then(() => jsConfetti.addConfetti({
