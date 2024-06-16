@@ -1,3 +1,8 @@
+// import statement
+import { createScratchCard } from './scratchCard.js';
+
+
+
 // Variables
 const submitBtn = document.getElementById("submit");
 const inputs = document.querySelectorAll("input");
@@ -20,6 +25,11 @@ submitBtn.addEventListener("click", checkAnswers);
 window.addEventListener('scroll', handleScroll);
 companionButtons.forEach(button => button.addEventListener("click", companionAssign));
 crossBtn.addEventListener("click", closeModal);
+
+// Initialize scratch card
+document.addEventListener('DOMContentLoaded', function() {
+    createScratchCard("scratch-card1", "gold");
+});
 
 // Functions
 
