@@ -66,11 +66,12 @@ export const createScratchCard = (canvasId, color) => {
             jsConfetti.addConfetti({
                 emojis: ['✨', '💫'],
                 emojiSize: 10,
-                confettiNumber: 350,
+                confettiNumber: 150,
 
-            }).then(() => jsConfetti.addConfetti({
-                confettiNumber: 250,
-            }))
+            })
+            // .then(() => jsConfetti.addConfetti({
+            //     confettiNumber: 250,
+            // }))
         }
     };
 
