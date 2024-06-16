@@ -89,7 +89,7 @@ p {
 	height: 350px;
 	border-radius: 8px;
 	padding: 5px;
-	z-index: 3;
+	z-index: 5;
 
 	background-color: white;
 	color: black;
@@ -265,17 +265,7 @@ section p {
 
 /* Scratch Card */
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: black;
-    color: white;
-}
-
-.scratch-card-container {
+.main-container {
     padding: 24px 16px;
 }
 
@@ -297,6 +287,7 @@ h2.main-heading {
     justify-content: center;
     align-items: center;
     user-select: none; /* Prevent text selection */
+    background-color: gold;
 }
 
 .scratch-card {
@@ -327,15 +318,15 @@ h2.main-heading {
 }
 
 #egg-rarity {
+    text-align: center;
     font-size: 25px;
-	border-radius: 6px;
-	font-size: 1.5em;
-	text-align: center;
     text-transform: uppercase;
-	border: 5px solid beige;
     color: gold;
     text-shadow: 0 0 8px violet;
+	border: 5px solid gold;
 }
+
+
 
 canvas {
     position: absolute;
@@ -344,43 +335,6 @@ canvas {
     cursor: grabbing;
     z-index: 2; /* Ensure canvas is on top for interaction */
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* Music Player */
 

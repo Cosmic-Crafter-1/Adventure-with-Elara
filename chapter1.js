@@ -1,8 +1,6 @@
 // import statement
 import { createScratchCard } from './scratchCard.js';
 
-
-
 // Variables
 const submitBtn = document.getElementById("submit");
 const inputs = document.querySelectorAll("input");
