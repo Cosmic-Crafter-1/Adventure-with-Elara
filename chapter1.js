@@ -1,7 +1,7 @@
 // Import statements
-import { createScratchCard } from './scratchCard.js';
-import { setupAudioPlayer } from './narrator.js';
-import { setupMusicPlayer } from './musicPlayer.js';
+import { createScratchCard } from './scripts/scratchCard.js';
+import { setupAudioPlayer } from './scripts/narrator.js';
+import { setupMusicPlayer } from './scripts/musicPlayer.js';
 
 // Variables
 const submitBtn = document.getElementById("submit");

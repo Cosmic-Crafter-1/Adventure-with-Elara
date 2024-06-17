@@ -39,6 +39,8 @@ h2 {
 
 .slider-wrapper {
     position: relative;
+    transition: 0.5s ease-in-out;
+
 }
 
 .slider-wrapper .slide-button {
@@ -100,10 +102,14 @@ h2 {
 
 .slider-wrapper .image-list .image-item {
     width: 200px;
-    height: 220px;
+    height: 300px;
     border-radius: 10px;
 
+    transition: 0.5s ease-in-out;
     object-fit: cover;
+
+    box-shadow: 12px 10px 10px rgb(243, 213, 162);
+
 }
 
 .img-text-wrapper p {
@@ -130,10 +136,14 @@ h2 {
 }
 
 
+.img-text-wrapper p, 
 .slider-wrapper .image-list img:hover {
-    transform: scale(0.9);
+    /* transform: scale(0.9); */
     transition: 0.5s ease-in-out;
     cursor: pointer;
+    /* When you apply perspective to an element, it establishes a perspective view for its child elements that are transformed in 3D space. */
+     /* Rotate the image on the Y-axis towards the left on hover */
+    transform: perspective(1000px) rotateY(-25deg);
 } 
 
 
@@ -195,13 +205,21 @@ h2 {
     }
 
     .slider-wrapper .image-list .image-item {
-        width: 250px;
-        height: 350px;
+        width: 220px;
+        height: 300px;
     }
 
     .slider-scrollbar .scrollbar-thumb {
         width: 20%;
     }
+
+    .container {
+        margin-bottom: 2em;
+    }
+
+    .slider-wrapper .image-list img:hover {
+        transform: perspective(1000px) rotateY(-30deg);
+    } 
 }
 
 
