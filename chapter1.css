@@ -181,6 +181,7 @@ p {
 
 #choose-companion {
 	margin: 0 auto;
+	height: 3em;
 }
 
 #choose-companion:hover {
@@ -288,13 +289,13 @@ h2.main-heading {
     width: 300px;
     height: 300px;
     border-radius: 10px;
+	padding: 0;
     margin-bottom: 32px;
     overflow: hidden;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    user-select: none; /* Prevent text selection */
     background-color: gold;
 	margin-left: 1.5em;
 }
@@ -350,6 +351,14 @@ canvas {
 
 audio {
 	margin-top: 3em;
+}
+
+#audioPlayer {
+    background-color: grey;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .audio-player .name,
@@ -480,3 +489,46 @@ audio {
 	  }
 	}
   }
+
+
+
+  /* Custom music player 2 */ 
+
+.custom-audio-player {
+    background-color: grey;
+    padding: 15px;
+    border-radius: 5px;
+	margin-top: 3em;
+    width: 300px;
+	height: 50px;
+   
+}
+
+.custom-audio-controls {
+    background-color: darkgrey;
+    border-radius: 5px;
+    padding: 8px;
+    width: 95%;
+	height: 40px;
+
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+
+	gap: 1em;
+
+}
+
+.custom-audio-controls button {
+    /* background: none;
+    border: none; */
+    color: black;
+    cursor: pointer;
+    font-size: 1em;
+	margin: 0;
+}
+
+.custom-audio-controls button:hover {
+   background-color: lightcoral;
+	color: black;
+}

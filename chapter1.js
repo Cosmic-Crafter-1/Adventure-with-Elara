@@ -1,5 +1,7 @@
-// import statement
+// Import statements
 import { createScratchCard } from './scratchCard.js';
+import { setupAudioPlayer } from './narrator.js';
+import { setupMusicPlayer } from './musicPlayer.js';
 
 // Variables
 const submitBtn = document.getElementById("submit");
@@ -10,24 +12,29 @@ const crossBtn = document.querySelector(".cross");
 let hasCompanion = false;
 let companionName = "";
 let companionImgPath = "";
-const userCompanionImg = document.getElementById("user-companion-image")
-const userCompanionName = document.getElementById("user-companion-name")
-const chooseCompanionBtn = document.getElementById("choose-companion")
+const userCompanionImg = document.getElementById("user-companion-image");
+const userCompanionName = document.getElementById("user-companion-name");
+const chooseCompanionBtn = document.getElementById("choose-companion");
+// Scratch Card color
+let colorArray = ["gold", "cyan", "orange", "chocolate", "#7c73e6", "#5be7a9", "#fefaec", "#ff6bd6", "#edddbd", "#fbe8d3"];
+let randomColor = colorArray[Math.floor(Math.random() * colorArray.length)];
 
 // Event listeners
 window.addEventListener('load', showTip);
 document.addEventListener("DOMContentLoaded", loadRandomImages);
-document.addEventListener('click', musicPlay);
 document.addEventListener("DOMContentLoaded", setupAudioPlayer);
+document.addEventListener("DOMContentLoaded", function () {
+    createScratchCard("scratch-card1", randomColor);
+    console.log("Selected Color: ", randomColor);
+});
+document.addEventListener('DOMContentLoaded', function () {
+    setupMusicPlayer();
+});
+document.addEventListener('click', musicPlay);
 submitBtn.addEventListener("click", checkAnswers);
-// window.addEventListener('scroll', handleScroll);
 companionButtons.forEach(button => button.addEventListener("click", companionAssign));
 crossBtn.addEventListener("click", closeModal);
-
-// Initialize scratch card
-document.addEventListener('DOMContentLoaded', function() {
-    createScratchCard("scratch-card1", "gold");
-});
+chooseCompanionBtn.addEventListener("click", chooseCompanion);
 
 // Functions
 
@@ -59,9 +66,6 @@ function musicPlay() {
     document.removeEventListener('click', musicPlay);
 }
 
-// Setup the audio player when the page loads
-import { setupAudioPlayer } from './audio.js';
-
 // Check answers for challenge
 function checkAnswers() {
     const inputs = document.querySelectorAll('input[name="book_series"]');
@@ -88,10 +92,7 @@ function checkAnswers() {
     }, 1000);
 }
 
-/* Choose companion via modal popup*/
-
-chooseCompanionBtn.addEventListener("click", chooseCompanion)
-
+// Choose companion via modal popup
 function chooseCompanion() {
     if (hasCompanion) {
         console.log("You have already chosen your companion.");
@@ -121,27 +122,26 @@ function companionAssign(e) {
 
     setTimeout(function () {
         modal.innerHTML = `
-        <div class = "modal-inner">
-        <span> You've chosen: <span> 
-        <br>
-        <img src="${companionImgPath}" alt="Photo of ${companionName}" class="user-companion-img">
+        <div class="modal-inner">
+            <span> You've chosen: </span>
+            <br>
+            <img src="${companionImgPath}" alt="Photo of ${companionName}" class="user-companion-img">
         </div>
         `;
-        chooseCompanionBtn.style.display = "none"
+        chooseCompanionBtn.style.display = "none";
     }, 1200);
     setTimeout(closeModal, 4500);
 
     setTimeout(function () {
-        // Play the companion name: 
+        // Play the companion name:
         const audio = new Audio(`music/${companionName}.wav`);
         audio.play();
 
-        userCompanionImg.src = `${companionName}.jpg`
-        userCompanionName.textContent = `${companionName}`
-        userCompanionImg.style.display = "block"
-    }, 5000)
+        userCompanionImg.src = `${companionName}.jpg`;
+        userCompanionName.textContent = `${companionName}`;
+        userCompanionImg.style.display = "block";
+    }, 5000);
 }
-
 
 // Open and close modal via cross button
 function showModal() {
@@ -152,14 +152,9 @@ function closeModal() {
     modal.style.display = 'none';
 }
 
-
-
-
-
 // Legacy Code, might need in future
 
 // Get scroll percentage for modal popup
-
 // function getScrollPercent() {
 //     var h = document.documentElement,
 //         b = document.body,
@@ -169,7 +164,6 @@ function closeModal() {
 // }
 
 // function handleScroll() {
-
 //     let scrollPercent = parseFloat(getScrollPercent().toFixed(2));
 //     console.log('Scroll Percentage: ' + scrollPercent + '%');
 

@@ -204,13 +204,19 @@
 		<!-- Footer -->
 
 		<section>
-			<p> Why is it alone ?? What's going to happen next....</p>
 			<a href="#"> --> Chapter 2 </a>
 		</section>
 
-		<audio id="audioPlayer" src="music/main-theme.mp3" controls loop>
-			Your browser does not support the audio element.
-		</audio>
+		<!-- Custom Music Player -->
+
+		<div class="custom-audio-player">
+			<audio id="audioPlayer" src="music/main-theme.mp3"></audio>
+			<div class="custom-audio-controls">
+				<button id="playPauseBtn">Play</button>
+				<button id="muteBtn">Mute</button>
+				<span id="currentTime">0:00</span> / <span id="duration">1:53</span>
+			</div>
+		</div>
 
 	</div>
 
