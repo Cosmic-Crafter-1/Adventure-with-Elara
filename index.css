@@ -30,7 +30,7 @@ body {
 }
 
 h2 {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 
@@ -43,6 +43,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0;
 }
 
 .hero-section img {
@@ -54,19 +55,22 @@ h2 {
 .hero-text h1 {
     margin: 1em 0;
     text-align: center;
+    font-size: 2em;
+    
 }
 
 
 .hero-text h1,
 .hero-text p {
-    font-size: 22px;
     line-height: 1.5;
     color: gold;
     text-shadow: 5px 5px 50px #FFD700;
 
     text-align: justify;
-    transform: scale(0.9);
+}
 
+.hero-text p {
+    font-size: 20px;
 }
 
 .para-2 {
@@ -268,7 +272,6 @@ h2 {
 
     .hero-section {
         width: 350px;
-
     }
 
     .hero-section img {
