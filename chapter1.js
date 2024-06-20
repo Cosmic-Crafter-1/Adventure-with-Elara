@@ -152,6 +152,10 @@ function closeModal() {
     modal.style.display = 'none';
 }
 
+/* Change collage image on width change */
+
+
+
 // Legacy Code, might need in future
 
 // Get scroll percentage for modal popup
