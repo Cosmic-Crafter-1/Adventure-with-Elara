@@ -285,6 +285,10 @@ h2.main-heading {
     margin-bottom: 42px;
 }
 
+/* .scratch-card-container {
+	display: none;
+} */
+
 .scratch-container {
     width: 300px;
     height: 300px;
@@ -531,4 +535,186 @@ audio {
 .custom-audio-controls button:hover {
    background-color: lightcoral;
 	color: black;
+}
+
+
+/* Print button CSS */
+
+
+/* Button css */
+
+.print > button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.print > button {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	display: inline-block;
+	font-size: 1em;
+	font-weight: bolder;
+	padding: 1em 2em;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #ff0081;
+	color: #fff;
+	border-radius: 4px;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	transition: transform ease-in-out 0.25s, box-shadow ease-in-out 0.25s;
+	box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+
+	width: 65%;
+}
+
+.print > button:focus {
+	outline: 0;
+}
+
+.print > button:before,
+.print > button:after {
+	position: absolute;
+	content: '';
+	display: block;
+	width: 140%;
+	height: 100%;
+	left: -20%;
+	z-index: -1000;
+	transition: all ease-in-out 0.5s;
+	background-repeat: no-repeat;
+}
+
+.print > button:before {
+	display: none;
+	top: -75%;
+	background-image: radial-gradient(circle, #ff0081 15%, transparent 15%), radial-gradient(circle, transparent 15%, #ff0081 15%, transparent 30%), radial-gradient(circle, #ff0081 15%, transparent 15%), radial-gradient(circle, #ff0081 15%, transparent 15%), radial-gradient(circle, transparent 7.5%, #ff0081 11.25%, transparent 15%), radial-gradient(circle, #ff0081 15%, transparent 15%), radial-gradient(circle, #ff0081 15%, transparent 15%), radial-gradient(circle, #ff0081 15%, transparent 15%), radial-gradient(circle, #ff0081 15%, transparent 15%);
+	background-size: 7.5% 7.5%, 15% 15%, 11.25% 11.25%, 15% 15%, 13.5% 13.5%, 7.5% 7.5%, 11.25% 11.25%, 7.5% 7.5%, 13.5% 13.5%;
+}
+
+.print > button:after {
+	display: none;
+	bottom: -75%;
+	background-image: radial-gradient(circle, #ff0081 15%, transparent 15%), radial-gradient(circle, #ff0081 15%, transparent 15%), radial-gradient(circle, transparent 7.5%, #ff0081 11.25%, transparent 15%), radial-gradient(circle, #ff0081 15%, transparent 15%), radial-gradient(circle, #ff0081 15%, transparent 15%), radial-gradient(circle, #ff0081 15%, transparent 15%), radial-gradient(circle, #ff0081 15%, transparent 15%);
+	background-size: 11.25% 11.25%, 15% 15%, 13.5% 13.5%, 15% 15%, 11.25% 11.25%, 7.5% 7.5%, 15% 15%;
+}
+
+
+.print > button:hover {
+	transform: scale(1.1);
+	background-color: #f5006b;
+	/* darken($button-bg, 5%) */
+	box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+
+.print > button:hover:before {
+	display: block;
+	animation: topBubbles ease-in-out 1.3s infinite;
+}
+
+.print > button:hover:after {
+	display: block;
+	animation: bottomBubbles ease-in-out 1.3s infinite;
+}
+
+.print > button:active {
+	transform: translateY(4px);
+}
+
+
+
+@keyframes topBubbles {
+	0% {
+		background-position: 10% 90%, 20% 90%, 30% 90%, 40% 90%, 50% 90%, 60% 90%, 70% 90%, 80% 90%, 90% 90%;
+	}
+
+	50% {
+		background-position: 0% 80%, 10% 20%, 20% 40%, 30% 0%, 40% 30%, 36% 50%, 55% 50%, 75% 20%, 95% 30%;
+	}
+
+	100% {
+		background-position: 0% 70%, 10% 10%, 20% 30%, 30% -10%, 40% 20%, 36% 40%, 55% 40%, 75% 10%, 95% 20%;
+		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+	}
+}
+
+@keyframes bottomBubbles {
+	0% {
+		background-position: 20% -10%, 40% 10%, 70% -10%, 80% -10%, 90% -10%, 80% -10%, 80% 0%;
+	}
+
+	50% {
+		background-position: 0% 80%, 25% 80%, 60% 60%, 70% 100%, 85% 70%, 105% 60%, 115% 0%;
+	}
+
+	100% {
+		background-position: 0% 90%, 25% 90%, 60% 70%, 80% 110%, 85% 80%, 105% 70%, 120% 10%;
+		background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+	}
+}
+
+
+/* Media for printing the page in nice format */
+
+@media print {
+    /* General styles for the whole document */
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Hide elements that should not be printed */
+    .options, .tip, .music-player, #choose-companion, .modal, .challenge, .scratch-card-container, .custom-audio-player, .print {
+        display: none;
+    }
+
+    /* Ensure only the main content is visible */
+    .container {
+        padding: 20px;
+    }
+
+    h1, h2, p {
+        color: #000;
+        margin-bottom: 10px;
+    }
+
+    img.random-img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .img-text-wrapper {
+        margin-bottom: 20px;
+    }
+
+    /* Custom styles for better printing layout */
+    .img-text-wrapper p {
+        margin: 10px 0;
+    }
+
+    section a {
+        display: block;
+        text-align: center;
+        margin: 30px 0;
+        font-size: 1.2em;
+        text-decoration: none;
+        color: #000;
+    }
+
+    /* Avoid page breaks inside certain elements */
+    .img-text-wrapper, h1, h2, p {
+        page-break-inside: avoid;
+    }
+
+    /* Additional fine-tuning for print */
+    @page {
+        size: A4; /* Adjust page size if needed */
+        margin: 20mm;
+    }
 }

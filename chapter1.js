@@ -9,6 +9,7 @@ const resultTextArea = document.getElementById("result-area");
 const modal = document.getElementById("modal");
 const companionButtons = document.querySelectorAll(".pet-btn");
 const crossBtn = document.querySelector(".cross");
+const printBtn = document.getElementById("print-btn")
 let hasCompanion = false;
 let companionName = "";
 let companionImgPath = "";
@@ -18,6 +19,8 @@ const chooseCompanionBtn = document.getElementById("choose-companion");
 // Scratch Card color
 let colorArray = ["gold", "cyan", "orange", "chocolate", "#7c73e6", "#5be7a9", "#fefaec", "#ff6bd6", "#edddbd", "#fbe8d3"];
 let randomColor = colorArray[Math.floor(Math.random() * colorArray.length)];
+let scratchCardContainer = document.querySelector(".scratch-card-container")
+
 
 // Event listeners
 window.addEventListener('load', showTip);
@@ -37,6 +40,11 @@ crossBtn.addEventListener("click", closeModal);
 chooseCompanionBtn.addEventListener("click", chooseCompanion);
 
 // Functions
+
+// Print button eventlistener
+printBtn.addEventListener("click", function() {
+    window.print();
+})
 
 // Show tip animation on page load
 function showTip() {
@@ -81,6 +89,7 @@ function checkAnswers() {
         resultTextArea.innerHTML = `Yay, Congratulations !! You were correct.<br>Here are 3 coins to celebrate your victory.`;
         resultTextArea.style.color = "lime";
         resultTextArea.style.transform = "scale(1.1)";
+        scratchCardContainer.style.display = "inline";
     } else {
         resultTextArea.innerHTML = `Uh Oh !!! Try again.<br>Here's a tip 😉: Try googling the book names.`;
         resultTextArea.style.color = "red";
